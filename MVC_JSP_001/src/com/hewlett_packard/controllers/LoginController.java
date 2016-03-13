@@ -36,8 +36,13 @@ public class LoginController extends HttpServlet {
 			User theValidUser = loginServiceInstance.returnUserModel_DTO();
 			request.getSession().setAttribute("userModel_DTO", theValidUser);
 			response.sendRedirect("welcome.jsp");
+			//Could do the redirect on the Server side instead, as a sort of uneditable bounce of the call and it's parameters, using the request's 'Dispatcher' object, like so:
+			//'RequestDispatcher r = request.getRequestDispatcher("welcome.jsp");'... I can then use 'r.forward()' method to transfer control to the destination jsp.
+			//There can be no response in this servet if you use this technique, but I could attach the model using 'request.setAttribute()' method instead of line 37 here
+			return;
 		}else{
 			response.sendRedirect("login.jsp");
+			return;
 		}
 		
 	}

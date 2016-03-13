@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<% User userLogedIn = (User) session.getAttribute("userModel_DTO"); %>
+<jsp:useBean id="userLogedIn" class="com.hewlett_packard.model_dtos.User"></jsp:useBean>
 <title>Hello <%=userLogedIn.getUserName() %></title>
 </head>
 <body>

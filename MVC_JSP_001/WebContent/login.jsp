@@ -15,7 +15,7 @@
 <title>Login</title>
 </head>
 <body>
-	<form action="LoginAttempt" method="get">
+	<form action="LoginAttempt" method="post">
 		</br>Login Name: <input type="text" name="userId"/>
 		</br>Password: <input type="text" name="userPass"/>
 		</br><input type="submit"/>

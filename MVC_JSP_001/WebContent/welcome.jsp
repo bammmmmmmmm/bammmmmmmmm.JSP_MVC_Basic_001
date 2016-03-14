@@ -4,14 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<jsp:useBean id="userLogedIn" class="com.hewlett_packard.model_dtos.User"></jsp:useBean>
-<title>Hello <%=userLogedIn.getUserName() %></title>
+<jsp:useBean id="userModel_DTO" class="com.hewlett_packard.model_dtos.User" scope="session"></jsp:useBean>
+<title>Hello <%=userModel_DTO.getUserName() %></title>
 </head>
 <body>
 
-<p>Hello <%=userLogedIn.getUserName().substring(0,userLogedIn.getUserName().indexOf(' ')) %>, I see you are <%=userLogedIn.getUserAge() %> years old!
-
-
+<p>Hello <jsp:getProperty property="userName" name="userModel_DTO"/>, I see you are <jsp:getProperty property="userAge" name="userModel_DTO"/> years old!
 
 </body>
 </html>

@@ -34,8 +34,8 @@ public class CreateLoginController extends HttpServlet {
 
 		if(userCreated){
 			System.out.println("User Creation Success");
-			User theValidUser = createUserInstance.returnUserModel_DTO();
-			request.getSession().setAttribute("newUser", theValidUser);//When not taking password, send email with autopassword
+			User theNewUser = createUserInstance.returnUserModel_DTO();
+			request.getSession().setAttribute("newUser_DTO", theNewUser);//When not taking password, send email with autopassword
 			response.sendRedirect("login.jsp");
 			return;
 		}else{

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" import="com.hewlett_packard.model_dtos.User"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +19,13 @@
 <body>
 
 <!-- Need to do Js (client-side) Validation yet -->
+
 <!-- Below I create a UserBean, with userloginId captured if this is after a User-Creation redirect from the CreateLoginController servlet, else it defaults to empty -->
+<!-- Have not managed to set the User's IdLogin property value returned from a UserLoginController call with Bean tags, instead resorting to JSP tags-->
+
+<jsp:useBean id="newUser_DTO" class="com.hewlett_packard.model_dtos.User" scope="session">
+	<jsp:setProperty name="newUser_DTO" property="userLoginId" value=""></jsp:setProperty>
+</jsp:useBean>
 
 	
 	<table>
@@ -30,7 +36,7 @@
 			<tr>
 				<td colspan="50%" style="background-color:#525252;">
 					<form action="LoginAttempt" method="post">
-						</br>Login Name: <input type="text" name="userId" value="" />
+						</br>Login Name: <input type="text" name="userId" value="<%=newUser_DTO.getUserLoginId()%>"/>
 						</br>Password: <input type="password" name="userPass" />
 						</br> <input type="submit" />
 					</form>
@@ -42,7 +48,7 @@
 						</br>Name: <input type="text" name="userName" />
 						</br>Email: <input type="text" name="userEmail" />
 						</br>Age: <input type="text" name="userAge" />
-						</br> <input type="submit" />
+						</br> <input type="submit"/>
 					</form>
 				</td>
 			</tr>

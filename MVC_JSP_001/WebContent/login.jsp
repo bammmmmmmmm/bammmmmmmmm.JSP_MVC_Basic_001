@@ -42,11 +42,11 @@
 					</form>
 				</td>
 				<td colspan="50%" style="background-color:#FFFF00;">
-					<form action="CreateLogin" method="post">
+					<form action="CreateLogin" method="post"">
 						</br>Login Name: <input type="text" name="userId" />
-						</br>Password: <input type="password" name="userPass" />
+						</br>Password: <input id="field_pwd1" title="Password must contain at least 6 characters, including UPPER/lowercase and numbers." type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="userPass"/>
 						</br>Name: <input type="text" name="userName" />
-						</br>Email: <input type="text" name="userEmail" />
+						</br>Email: <input type="email" name="userEmail" />
 						</br>Age: <input type="text" name="userAge" />
 						</br> <input type="submit"/>
 					</form>

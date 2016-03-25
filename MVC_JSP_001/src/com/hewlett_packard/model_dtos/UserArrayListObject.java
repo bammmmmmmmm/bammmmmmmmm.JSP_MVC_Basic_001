@@ -33,7 +33,12 @@ public class UserArrayListObject {
 	}
 
 	
-	//only way to get this single objects instance
+	//to add a user
+	public void addUser(User u){
+		usersList.add(u);
+	}
+	
+	//only way to get this singleton object's instance
 	public static UserArrayListObject getOnlyInstance() {
 		return onlyInstance;
 	}
@@ -42,4 +47,5 @@ public class UserArrayListObject {
 		return usersList;
 	}
 
+	
 }

@@ -55,7 +55,7 @@
 	<title>Login</title>
 
 </head>
-<body style="background-color: #525252; color: white">
+<body style="background-color: #525252; color: white;">
 
 	<!-- Need to do Js (client-side) Validation yet -->
 
@@ -71,10 +71,11 @@
 
 
 	<div class="container">
+	
 
 		<div class="text-center">
 			<h1>Welcome to Life</h1>
-			<p style="font-style:italic;">"A novel way to keep your life in one place"</p>
+			<p style="font-style:italic;">"A novel way to keep my life in one place"</p>
 		</div>
 
 		<!-- ROUNDED IMAGES -->
@@ -82,11 +83,11 @@
 		<img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"
 			id="nttLogo" class="img-responsive img-thumbnail pull-center"
 			alt="Responsive image">
-
 	</div>
 
 	<div class="container">
-		<div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
+	<div class="row row-centered">
+	<div class="col-lg-6 col-md-6 col-sm-9 col-xs-12 col-centered col-lg-offset-3 col-md-offset-3 col-sm-offset-1">
 		
 				
 				<!-- Use nav-pills, nav-tabs. To center tabs add nav-justified to the class for ul -->
@@ -101,10 +102,10 @@
 					
 						<form action="LoginAttempt" method="post">
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Login Name</span><input type="text" class="form-control" name="userId" value="<%=newUser_DTO.getUserLoginId()%>">
+		  						<span class="input-group-addon">Login Name</span><input type="text" required class="form-control" name="userId" value="<%=newUser_DTO.getUserLoginId()%>">
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;</span><input type="password" class="form-control" name="userPass">
+		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;</span><input type="password" required class="form-control" name="userPass">
 							</div><br>
 							<br/><label><button type="submit" class = "btn-default btn-lg">Lets Go!</button></label>
 						</form>
@@ -112,28 +113,34 @@
 					<div id="new" class="tab-pane fade">
 						<form action="CreateLogin" method="post">
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Login Name&nbsp;&nbsp;&nbsp;</span><input type="text" class="form-control" name="userId">
+		  						<span class="input-group-addon">Login Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="userId">
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;</span><input type="password" class="form-control" title="Password must contain at least 6 characters, including UPPER/lowercase and numbers."
-																	required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="userPass" />
+		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="password" class="form-control" title="Password must contain at least 6 characters, including
+		  															UPPER/lowercase and numbers." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="userPass" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+  																	if(this.checkValidity()) form.uPassConf.pattern = this.value"/>
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Name&nbsp;&nbsp;&nbsp;</span><input type="text" class="form-control" name="userName">
+		  						<span class="input-group-addon">Retype Password</span><input type="password" class="form-control" title="Please enter a password match to the above" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="uPassConf"
+		  															onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"/>
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Email&nbsp;&nbsp;&nbsp;</span><input type="email" class="form-control" name="userEmail">
+		  						<span class="input-group-addon">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="userName">
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Age&nbsp;&nbsp;&nbsp;</span><input type="text" class="form-control" name="userAge">
+		  						<span class="input-group-addon">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="email" required class="form-control" name="userEmail">
 							</div><br>
-							<br/><label><button type="submit" class = "btn-default btn-lg">Lets Go!</button></label>
+							<div class="input-group input-group-md">
+		  						<span class="input-group-addon">Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="userAge">
+							</div><br>
+							<br/><label><button type="submit" class = "btn-default btn-lg">Sign Me Up!</button></label>
 						</form>
 					</div>
 				</div>
 				
-			
-		</div>
+			<!-- NEXT:Write Login Cookie -->
+	</div>
+	</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

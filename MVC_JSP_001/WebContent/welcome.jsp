@@ -11,5 +11,18 @@
 
 <p>Hello <jsp:getProperty property="userName" name="userModel_DTO"/>, I see you are <jsp:getProperty property="userAge" name="userModel_DTO"/> years old!
 
+<p>BUILD COOKIE INTO CONTROLLER, to store Login details... Means I also need a logout button in like a jsf header/footer</p>
+
+<h1>Widget/ SubPage Ideas</h1>
+<p>Event List, with countdown</p>
+<p>New Pics Pulled from Facebook API?</p>
+<p>Write API for all Users, and each user... make RESTful... Can I base this on Observer Pattern?</p>
+<p>Read From My API to GoogleCharts and display in divs</p>
+<p>Friend Group Schema Tool</p>
+<p>Acrynom Repo</p>
+<p>Like to my Career Stuff</p>
+<p>Incorporate Strategy Pattern</p>
+
+
 </body>
 </html>

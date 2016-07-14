@@ -80,9 +80,7 @@
 
 		<!-- ROUNDED IMAGES -->
 		<!-- Images marked as responsive have a max-width equal to the screen. You can add rounded corners with img-rounded, img-circle, and img-thumbnail. pull-left and pull-right will float images in the provided direction. center-block will place the image in the center. -->
-		<img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"
-			id="nttLogo" class="img-responsive img-thumbnail pull-center"
-			alt="Responsive image">
+		<img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" id="nttLogo" class="img-responsive img-thumbnail pull-center" alt="Responsive image">
 	</div>
 
 	<div class="container">

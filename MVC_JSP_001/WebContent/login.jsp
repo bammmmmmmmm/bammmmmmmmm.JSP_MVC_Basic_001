@@ -112,6 +112,7 @@
 						<form action="CreateLogin" method="post">
 							<div class="input-group input-group-md">
 		  						<span class="input-group-addon">Login Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="userId">
+								<!-- NEED AJAX CALL HERE TO CHECK NO EXISTING LoginNames MATCHING THIS -->
 							</div><br>
 							<div class="input-group input-group-md">
 		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="password" class="form-control" title="Password must contain at least 6 characters, including

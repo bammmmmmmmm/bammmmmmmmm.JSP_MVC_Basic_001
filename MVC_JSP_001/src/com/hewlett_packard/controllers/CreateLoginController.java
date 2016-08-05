@@ -22,11 +22,11 @@ public class CreateLoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//Retrieve parameters passed to create new user
-		String userLoginId =request.getParameter("userId");
-		String userPass =request.getParameter("userPass");//Eventually shouldn't take this password
-		String userName =request.getParameter("userName");
-		String userEmail =request.getParameter("userEmail");
-		String userAge =request.getParameter("userAge");
+		String userLoginId =request.getParameter("_userId");
+		String userPass =request.getParameter("_userPass");//Eventually shouldn't take this password
+		String userName =request.getParameter("_userName");
+		String userEmail =request.getParameter("_userEmail");
+		String userAge =request.getParameter("_userAge");
 		
 		//Create Login Service and a new User
 		CreateUserService createUserInstance = new CreateUserService();

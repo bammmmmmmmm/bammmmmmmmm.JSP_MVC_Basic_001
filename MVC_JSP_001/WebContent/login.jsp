@@ -111,26 +111,26 @@
 					<div id="new" class="tab-pane fade">
 						<form action="CreateLogin" method="post">
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Login Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="userId">
+		  						<span class="input-group-addon">Login Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="_userId">
 								<!-- NEED AJAX CALL HERE TO CHECK NO EXISTING LoginNames MATCHING THIS -->
 							</div><br>
 							<div class="input-group input-group-md">
 		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="password" class="form-control" title="Password must contain at least 6 characters, including
-		  															UPPER/lowercase and numbers." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="userPass" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
-  																	if(this.checkValidity()) form.uPassConf.pattern = this.value"/>
+		  															UPPER/lowercase and numbers." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="_userPass" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+  																	if(this.checkValidity()) form._uPassConf.pattern = this.value"/>
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Retype Password</span><input type="password" class="form-control" title="Please enter a password match to the above" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="uPassConf"
+		  						<span class="input-group-addon">Retype Password</span><input type="password" class="form-control" title="Please enter a password match to the above" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="_uPassConf"
 		  															onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"/>
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="userName">
+		  						<span class="input-group-addon">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="_userName">
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="email" required class="form-control" name="userEmail">
+		  						<span class="input-group-addon">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="email" required class="form-control" name="_userEmail">
 							</div><br>
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="userAge">
+		  						<span class="input-group-addon">Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="_userAge">
 							</div><br>
 							<br/><label><button type="submit" class = "btn-default btn-lg">Sign Me Up!</button></label>
 						</form>

@@ -18,7 +18,7 @@
 	<!-- If IE use the latest rendering engine -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
-	<!-- Set the page to the width of the device and set the zoon level -->
+	<!-- Set the page to the width of the device and set the zoom level -->
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	
 	<link rel="stylesheet" type="text/css"
@@ -52,10 +52,13 @@
 	
 	<jsp:useBean id="userModel_DTO"
 		class="com.hewlett_packard.model_dtos.User" scope="session"></jsp:useBean>
+	
+	<script type="text/javascript" src="checkUserValid.js"></script>
+	
 	<title>Login</title>
 
 </head>
-<body style="background-color: #525252; color: white;">
+<body style="background-color: #525252; color: white;" onload="check_user()"><!-- The check_user() is in the checkUserValid.js file for ajax -->
 
 	<!-- Need to do Js (client-side) Validation yet -->
 
@@ -111,9 +114,14 @@
 					<div id="new" class="tab-pane fade">
 						<form action="CreateLogin" method="post">
 							<div class="input-group input-group-md">
-		  						<span class="input-group-addon">Login Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="_userId">
-								<!-- NEED AJAX CALL HERE TO CHECK NO EXISTING LoginNames MATCHING THIS -->
-							</div><br>
+		  						<span class="input-group-addon">Login Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" required class="form-control" name="_userId" id="_userId">
+							</div>
+							
+							<!-- Warning in Login Name exists -->
+							<div id="login_warning_div" style="color:red;">
+		  						<span id="login_warning_text"></span><br>
+							</div>
+							<!-- End Warning -->
 							<div class="input-group input-group-md">
 		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="password" class="form-control" title="Password must contain at least 6 characters, including
 		  															UPPER/lowercase and numbers." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="_userPass" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
@@ -147,3 +155,7 @@
 
 </body>
 </html>
+
+<!-- BUGS:
+1. Regex password check breaks if my usual password used sometimes
+-->

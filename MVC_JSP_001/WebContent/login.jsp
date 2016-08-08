@@ -160,5 +160,5 @@
 </html>
 
 <!-- BUGS:
-1. Regex password check breaks if my usual password used sometimes
+1. Regex password check breaks if my usual password used sometimes...
 -->

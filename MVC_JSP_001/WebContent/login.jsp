@@ -53,7 +53,6 @@
 	<jsp:useBean id="userModel_DTO"
 		class="com.hewlett_packard.model_dtos.User" scope="session"></jsp:useBean>
 	
-	<script type="text/javascript" src="checkUserValid.js"></script>
 	
 	<title>Login</title>
 
@@ -122,6 +121,7 @@
 		  						<span id="login_warning_text"></span><br>
 							</div>
 							<!-- End Warning -->
+							
 							<div class="input-group input-group-md">
 		  						<span class="input-group-addon">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="password" class="form-control" title="Password must contain at least 6 characters, including
 		  															UPPER/lowercase and numbers." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="_userPass" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
@@ -153,6 +153,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+	<!-- For Ajax script -->
+	<script type="text/javascript" src="checkUserValid.js"></script>
+	
 </body>
 </html>
 

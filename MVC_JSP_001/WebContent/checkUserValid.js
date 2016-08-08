@@ -10,6 +10,7 @@ function createXmlHttpRequestObject(){
 		var xmlHttp;
 		
 		if(window.ActiveXObject){//Deal with IE... This may not still be needed...?
+			
 			try{
 				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
 				
@@ -34,8 +35,9 @@ function createXmlHttpRequestObject(){
 }
 
 
-//2. Check for readyStateChance [and/or 'onChange()'], parse login _userId field, and send Request to CheckUserController
+//2. Check for readyStateChance [and/or 'onChange()'], parse login _userId field, and send Request to CheckUserController!!!!!!!!!!!!!
 function check_user(){
+	
 	if(xmlHttp.readyState==0 || xmlHttp.readyState==4 ){//States 0 and 4 mean the xmlHttp object is free atm
 		userIdEntered=encodeURIComponent(document.getElementById("_userId").value);
 		xmlHttp.open("GET","CheckUser?_userId="+userIdEntered,true);//True=asynchronous
@@ -48,6 +50,7 @@ function check_user(){
 
 //3. Catch every Response to the above method (2) and inject into 'login_warning_div'>'login_warning_text'.value
 function handleServerResponse(){
+	
 	if(xmlHttp.readyState==4){
 		if(xmlHttp.status==200){
 			xmlResponse = xmlHttp.responseXML;
@@ -60,5 +63,3 @@ function handleServerResponse(){
 		}
 	}
 }
-
-//NOTE: Mine is not in XML!!!!!!! Above may not work properly

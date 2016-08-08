@@ -29,7 +29,7 @@ public class CheckUserController extends HttpServlet {
 /*		//For JUnit Testing
 		System.out.println(userLoginId);*/
 		
-		response.setContentType("text/plain");
+		response.setContentType("text/xml");
 		
 		PrintWriter responseText = response.getWriter();
 		
@@ -40,12 +40,16 @@ public class CheckUserController extends HttpServlet {
 		//if in use
 		if(loginAttempt){
 			System.out.println("UserId Exists");
-			responseText.write("This Id is already in Use. Please Choose again!");
+			responseText.print("\n<root>");
+			responseText.print("This Id is already in Use. Please Choose again!");
+			responseText.print("\n</root>");
 			
 			return;
 		}else{
 			System.out.println("UserId free");
-			responseText.write("This Id is is free. Good choice");
+			responseText.print("\n<root>");
+			responseText.print("");
+			responseText.print("\n</root>");
 			return;
 		}
 		
@@ -54,4 +58,4 @@ public class CheckUserController extends HttpServlet {
 
 }
 
-/*Should have status codes for success and errors also*/
+/*Should have status codes for success and errors also??*/
